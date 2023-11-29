@@ -6,13 +6,13 @@ def findItem(string):
     type = input("Enter type: ")
     if type == '1':
         string = """
-        SELECT * FROM PRODUCTS AS P
-            WHERE P.Prod_type = 'Shirt'
+        SELECT * FROM PRODUCTS AS p
+            WHERE p.Prod_type = 'Shirt'
         """
     elif type == '2':
         string = """
-        SELECT * FROM PRODUCTS AS P
-            WHERE P.Prod_type = 'Sock'
+        SELECT * FROM PRODUCTS AS p
+            WHERE p.Prod_type = 'Sock'
         """
     elif type == '3':
         string = """
