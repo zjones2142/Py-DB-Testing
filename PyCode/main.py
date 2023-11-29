@@ -77,8 +77,9 @@ try:
         sCode = generalFunc(sCode)
         with connection.cursor() as c: #execute final SQL statement
             c.execute(sCode)
-            result = c.fetchall()
             print("Returned Rows From DB:")
+            columns = c.description 
+            result = [{columns[index][0]:column for index, column in enumerate(value)} for value in c.fetchall()]
             for row in result:
                 print(row)
 except Error as e:
