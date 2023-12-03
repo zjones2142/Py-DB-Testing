@@ -2,7 +2,7 @@ from getpass import getpass
 from mysql.connector import connect, Error
 
 def findItem(string):
-    print("Item types: {1=Shirt,2=Sock,3=Hat} (case sensitive)")
+    print("Item types: {1=Shirt,2=Sock,3=Hat}")# (case sensitive)")
     type = input("Enter type: ")
     if type == '1':
         string = """
