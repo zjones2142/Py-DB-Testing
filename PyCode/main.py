@@ -2,23 +2,12 @@ from getpass import getpass
 from mysql.connector import connect, Error
 
 def findItem(string):
-    print("Item types: {1=Shirt,2=Sock,3=Hat}")# (case sensitive)")
+    print("Item types: {Shirt,Sock,Hat} (case sensitive)")
     type = input("Enter type: ")
-    if type == '1':
+    if type == "Shirt" or "Sock" or "Hat":
         string = """
         SELECT * FROM PRODUCTS AS p
-            WHERE p.Prod_type = 'Shirt'
-        """
-    elif type == '2':
-        string = """
-        SELECT * FROM PRODUCTS AS p
-            WHERE p.Prod_type = 'Sock'
-        """
-    elif type == '3':
-        string = """
-        SELECT * FROM PRODUCTS AS p
-            WHERE p.Prod_type = 'Hat'
-        """
+        WHERE p.Prod_type = '"""+type+"'"
     else:
         print("Not a valid type.")
     return string
